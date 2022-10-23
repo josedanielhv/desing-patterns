@@ -3,6 +3,8 @@ package com.desingpatterns;
 import com.desingpatterns.creational.builder.CodeBuilder;
 import com.desingpatterns.creational.factory.Person;
 import com.desingpatterns.creational.factory.PersonFactory;
+import com.desingpatterns.creational.prototype.Line;
+import com.desingpatterns.creational.prototype.Point;
 import com.desingpatterns.solid.sr.BadCreditCard;
 import com.desingpatterns.solid.sr.GoodCreditCard;
 import com.desingpatterns.solid.sr.Operation;
@@ -33,6 +35,18 @@ public class Main {
         Person p2 = personFactory.createPerson("Astrid");
         System.out.println(p1);
         System.out.println(p2);
+        //Prototype
+        Point point1 = new Point(1,1);
+        Point point2 = new Point(2,5);
+        Line line = new Line(point1, point2);
+
+        Line copiedLine = line.deepCopy();
+        copiedLine.start.x = 0;
+        copiedLine.end.y = 3;
+
+        System.out.println(line);
+        System.out.println(copiedLine);
+
 
     }
 }
