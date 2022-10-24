@@ -10,6 +10,9 @@ import com.desingpatterns.creational.singleton.SingletonTester;
 import com.desingpatterns.solid.sr.BadCreditCard;
 import com.desingpatterns.solid.sr.GoodCreditCard;
 import com.desingpatterns.solid.sr.Operation;
+import com.desingpatterns.structural.adapter.Rectangle;
+import com.desingpatterns.structural.adapter.Square;
+import com.desingpatterns.structural.adapter.SquareToRectangleAdapter;
 
 import java.util.Date;
 
@@ -57,5 +60,10 @@ public class Main {
                 Singleton::getInstance
         ));
 
+        //Structural
+        //Adapter
+        Square square = new Square(5);
+        Rectangle squareToRectangle = new SquareToRectangleAdapter(square);
+        System.out.println(squareToRectangle.toString());
     }
 }
