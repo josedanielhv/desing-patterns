@@ -5,13 +5,12 @@ import com.desingpatterns.creational.factory.Person;
 import com.desingpatterns.creational.factory.PersonFactory;
 import com.desingpatterns.creational.prototype.Line;
 import com.desingpatterns.creational.prototype.Point;
-import com.desingpatterns.singleton.Singleton;
-import com.desingpatterns.singleton.SingletonTester;
+import com.desingpatterns.creational.singleton.Singleton;
+import com.desingpatterns.creational.singleton.SingletonTester;
 import com.desingpatterns.solid.sr.BadCreditCard;
 import com.desingpatterns.solid.sr.GoodCreditCard;
 import com.desingpatterns.solid.sr.Operation;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 
 public class Main {
