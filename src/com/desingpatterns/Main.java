@@ -5,10 +5,13 @@ import com.desingpatterns.creational.factory.Person;
 import com.desingpatterns.creational.factory.PersonFactory;
 import com.desingpatterns.creational.prototype.Line;
 import com.desingpatterns.creational.prototype.Point;
+import com.desingpatterns.singleton.Singleton;
+import com.desingpatterns.singleton.SingletonTester;
 import com.desingpatterns.solid.sr.BadCreditCard;
 import com.desingpatterns.solid.sr.GoodCreditCard;
 import com.desingpatterns.solid.sr.Operation;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 
 public class Main {
@@ -47,6 +50,13 @@ public class Main {
         System.out.println(line);
         System.out.println(copiedLine);
 
+        //Singleton
+        System.out.println("Is " + PersonFactory.class.getSimpleName() + " Class a Singleton? : " + SingletonTester.isSingleton(
+                    PersonFactory::new
+        ));
+        System.out.println("Is " + Singleton.class.getSimpleName() + " Class a Singleton? : " + SingletonTester.isSingleton(
+                Singleton::getInstance
+        ));
 
     }
 }
