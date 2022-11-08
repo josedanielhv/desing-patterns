@@ -13,6 +13,7 @@ import com.desingpatterns.solid.sr.Operation;
 import com.desingpatterns.structural.adapter.Rectangle;
 import com.desingpatterns.structural.adapter.Square;
 import com.desingpatterns.structural.adapter.SquareToRectangleAdapter;
+import com.desingpatterns.structural.bridge.RasterRenderer;
 
 import java.util.Date;
 
@@ -65,5 +66,8 @@ public class Main {
         Square square = new Square(5);
         Rectangle squareToRectangle = new SquareToRectangleAdapter(square);
         System.out.println(squareToRectangle.toString());
+
+        //Bridge
+        System.out.println(new com.desingpatterns.structural.bridge.Square(new RasterRenderer()).toString());
     }
 }
