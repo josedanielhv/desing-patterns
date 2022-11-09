@@ -2,7 +2,7 @@ package com.desingpatterns.structural.bridge;
 
 abstract class Shape
 {
-    protected Renderer renderer;
+    protected Renderer renderer;// Este es el bridge!!!!
     public Shape(Renderer renderer){
         this.renderer = renderer;
     }

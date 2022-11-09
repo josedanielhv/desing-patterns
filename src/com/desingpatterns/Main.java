@@ -14,7 +14,12 @@ import com.desingpatterns.structural.adapter.Rectangle;
 import com.desingpatterns.structural.adapter.Square;
 import com.desingpatterns.structural.adapter.SquareToRectangleAdapter;
 import com.desingpatterns.structural.bridge.RasterRenderer;
+import com.desingpatterns.structural.composite.MyList;
+import com.desingpatterns.structural.composite.SingleValue;
+import com.desingpatterns.structural.decorator.Dragon;
+import com.desingpatterns.structural.flyweight.Sentence;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class Main {
@@ -69,5 +74,22 @@ public class Main {
 
         //Bridge
         System.out.println(new com.desingpatterns.structural.bridge.Square(new RasterRenderer()).toString());
+
+        //Composite
+        SingleValue integers = new SingleValue(2);
+        SingleValue integers1 = new SingleValue(3);
+        MyList valueContainers = new MyList(Arrays.asList(integers, integers1));
+        System.out.println("My sum is: " + valueContainers.sum());
+
+        //Decorator
+        Dragon dragon = new Dragon();
+        System.out.println(dragon.crawl());
+        System.out.println(dragon.fly());
+
+        //Flyweight
+        Sentence sentence = new Sentence("alpha beta gamma[]");
+        sentence.getWord(1).capitalize = true;
+        System.out.println(sentence); // writes "hello WORLD"
+
     }
 }
