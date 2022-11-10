@@ -18,6 +18,7 @@ import com.desingpatterns.structural.composite.MyList;
 import com.desingpatterns.structural.composite.SingleValue;
 import com.desingpatterns.structural.decorator.Dragon;
 import com.desingpatterns.structural.flyweight.Sentence;
+import com.desingpatterns.structural.proxy.ResponsiblePerson;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -90,6 +91,22 @@ public class Main {
         Sentence sentence = new Sentence("alpha beta gamma[]");
         sentence.getWord(1).capitalize = true;
         System.out.println(sentence); // writes "hello WORLD"
+
+        //Proxy
+        com.desingpatterns.structural.proxy.Person person = new com.desingpatterns.structural.proxy.Person(22);
+        System.out.println(person.drink());
+        System.out.println(person.drive());
+        System.out.println(person.drinkAndDrive());
+
+        ResponsiblePerson responsiblePerson = new ResponsiblePerson(new com.desingpatterns.structural.proxy.Person(15));
+        System.out.println(responsiblePerson.drink());
+        System.out.println(responsiblePerson.drive());
+        System.out.println(responsiblePerson.drinkAndDrive());
+
+        responsiblePerson.setAge(22);
+        System.out.println(responsiblePerson.drink());
+        System.out.println(responsiblePerson.drive());
+        System.out.println(responsiblePerson.drinkAndDrive());
 
     }
 }
